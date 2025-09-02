@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>Signin</title>
+        <style>
+             .heading{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: rgb(227, 106, 126);
+            }
+            .container{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid rgb(218, 67, 92);
+                width: 40%;
+                height: 80%;
+                padding: 10px;
+                border-radius: 10px;
+                background-color: pink;
+                
+                
+            }
+            .btn{
+                background-color: rgb(241, 82, 108);
+                color: whitesmoke;
+                font-weight: bold;
+                margin-left: 110px;
+            }
+            .btn:hover{
+                background-color:rgb(209, 43, 70) ;
+                color: whitesmoke;
+            }
+            @media (max-width:768px){
+                .container{
+                    width:80%;
+
+                }
+                .heading{
+                    font-size: 1.2rem;
+
+                }
+                .btn{
+                    width:100%;
+                    margin-left: 0;
+                }
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+        <h1 class="heading">Signin to explore Blogsy</h1>
+        <div class="container mt-4">
+            <form action="/user/signin" method="POST">
+                <div class="mb-3">
+                    <label for="Email1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="Email" name="email" aria-describedby="email">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="Password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="Password" name="password">
+                </div>
+                <button type="submit" class="btn">Signin</button>
+            </form>
+
+        </div>
+
+
+        <%- include('./partials/script') %>
+
+</body>
+<%- include('./partials/footer') %>
+</html>

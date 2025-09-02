@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+    <title>Add New Blog</title>
+    <style>
+        .heading{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgb(227, 106, 126);
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgb(218, 67, 92);
+            width: 40%;
+            height: 40%;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: pink;
+            margin-bottom: 20px;
+                
+        }
+        .btn{
+            background-color: rgb(241, 82, 108);
+            color: whitesmoke;
+            font-weight: bold;
+            margin-left: 110px;
+        }
+
+        .btn:hover{
+            background-color:rgb(209, 43, 70) ;
+            color: whitesmoke;
+            }
+
+        @media (max-width: 992px){
+            .container{
+                    width:60%;                    
+            }
+            .btn{
+                    margin-left: 0;
+                    width: 100%;
+            }
+
+        }
+
+        @media (max-width:768px){
+            .container{
+                width:80%;
+
+                }
+
+            .heading{
+                font-size: 1.2rem;
+
+            }
+            .btn{
+                    width:100%;
+                    margin-left: 0;
+            }
+        }
+        </style>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+    <h1 class="heading">Let's Write Blogs</h1>
+    <main>
+        <div class="container mt-3">
+            <form action="/blog" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="coverImage" class="form-label">Cover Image</label>
+                    <input class="form-control" type="file" name="coverImage" id="coverImage">
+
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" class="form-control" name="title" id="title">
+                </div>
+
+                <div class="mb-3">
+                    <label for="body">Body</label>
+                    <textarea name="body" class="form-control" id="body"></textarea>                
+                </div>
+                <div class="mb-3">
+                    <button class="btn" type="submit">Submit</button>
+                </div>
+            </form>
+
+    </div>
+
+    <%- include('./partials/script') %>
+    </main>
+   
+</body>
+<%- include('./partials/footer') %>
+</html>

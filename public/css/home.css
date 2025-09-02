@@ -1,0 +1,50 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+
+
+.firstSection{
+    display: flex;
+    justify-content: space-around;
+    margin: 23px 0;
+}
+
+.firstSection div{
+    width: 30%;
+}
+
+.leftSection{
+    margin: 40px 0;
+    
+}
+
+.leftSection div{
+    font-family: "Roboto", sans-serif;
+    font-style: italic;
+}
+
+.leftSection h1{
+    color:rgb(64, 66, 65)
+    
+}
+
+
+
+#element{
+    color:rgb(239, 76, 103);
+    font-family: "Roboto", sans-serif;
+    font-style: italic;
+    font-size: 30px;
+}
+
+
+
+.rightSection img{
+    width:100%;
+    
+    
+}

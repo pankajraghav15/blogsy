@@ -1,0 +1,41 @@
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    main {
+        flex: 1;
+       
+    }
+
+    footer {
+        background-color: rgb(240, 103, 126);
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 15px;
+        text-align: center;
+        padding: 15px 10px;
+        margin-top: auto;
+
+    }
+
+    footer a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
+
+    footer a:hover {
+        color: #ffd1dc;
+        text-decoration: underline;
+    }
+</style>
+<footer>
+    © <%= new Date().getFullYear() %> Blog$y — All rights reserved |
+        <a href="mailto:pankajraghav15@gmail.com">pankajraghav15@gmail.com</a>
+
+</footer>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>viewProfile</title>
+        <style>
+            body{
+                background-color: rgb(244, 217, 244);
+            }
+            .container{
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .profileImage img{
+                width:200px;
+                height: 200px;
+                margin-top: 20px;
+            }
+
+            .userDetails{
+                margin:20px 0px 0px;
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+
+        <div class="container">
+            <% if (user) { %>
+                <div class="profile">
+                    <div class="profileImage">
+                        <img src="<%= user.profileImageURL %>" alt="profile image">
+                    </div>
+                    <div class="userDetails">
+                       <h5>First Name: <%= user.firstName %></h5>
+                       <h5>Last Name: <%= user.lastName %></h5>
+                       <h5>Gender: <%= user.gender %></h5>
+                       <h5>Email: <%= user.email %></h5>
+                    </div>
+                </div>
+             
+            <% } %>
+        </div>
+
+
+        <%- include('./partials/script') %>
+
+
+</body>
+<%- include('./partials/footer') %>
+</html>

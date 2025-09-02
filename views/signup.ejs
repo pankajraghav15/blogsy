@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>Signup</title>
+          <style>
+             .heading{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: rgb(227, 106, 126);
+            }
+            .container{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid rgb(218, 67, 92);
+                width: 40%;
+                height: 40%;
+                padding: 10px;
+                border-radius: 10px;
+                background-color: pink;
+                margin-bottom: 20px;
+                
+            }
+            .btn{
+                background-color: rgb(241, 82, 108);
+                color: whitesmoke;
+                font-weight: bold;
+                margin-left: 110px;
+            }
+            .btn:hover{
+                background-color:rgb(209, 43, 70) ;
+                color: whitesmoke;
+            }
+            .form-check-input:checked {
+                background-color: rgb(241, 82, 108);
+                border-color: rgb(241, 82, 108);
+            }
+
+            @media (max-width: 992px){
+                .container{
+                    width:60%;                    
+                }
+                .btn{
+                    margin-left: 0;
+                    width: 100%;
+                }
+            }
+
+            @media (max-width:768px){
+                .container{
+                    width:80%;
+
+                }
+                .heading{
+                    font-size: 1.2rem;
+
+                }
+                .btn{
+                    width:100%;
+                    margin-left: 0;
+                }
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+        <h1 class="heading">Create Account</h1>
+        <div class="container mt-2">
+            <form action="/user/signup" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" aria-describedby="firstName">
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" aria-describedby="lastName">
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="gender" class="gender">Gender</label>
+                    
+                    <input class="form-check-input" type="radio" name="gender" id="genderMale" value="Male" checked>
+                    <label class="form-check-label" for="genderMale">
+                    Male
+                    </label>
+                    <input class="form-check-input" type="radio" name="gender" id="genderFemale" value="Female">
+                    <label class="form-check-label" for="genderFemale">
+                    Female
+                    </label>
+
+                </div>
+
+
+
+                <div class="mb-3">
+                    <label for="profileImage" class="form-label">Profile Image</label>
+                    <input class="form-control" type="file" name="profileImage" id="profileImage">
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="Email1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="Email" name="email" aria-describedby="email">
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="Password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="Password" name="password">
+                </div>
+                <button type="submit" class="btn">SignUp</button>
+            </form>
+
+        </div>
+
+
+        <%- include('./partials/script') %>
+
+</body>
+<%- include('./partials/footer') %>
+</html>

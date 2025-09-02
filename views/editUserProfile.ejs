@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>Edit profile</title>
+        <style>
+            .heading{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: rgb(227, 106, 126);
+            }
+            .container{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid rgb(218, 67, 92);
+                width: 40%;
+                height: 40%;
+                padding: 10px;
+                border-radius: 10px;
+                background-color: pink;
+                margin-bottom: 20px;
+                
+            }
+             .btn{
+                background-color: rgb(241, 82, 108);
+                color: whitesmoke;
+                font-weight: bold;
+                
+            }
+            .btn:hover{
+                background-color:rgb(209, 43, 70) ;
+                color: whitesmoke;
+            }
+            @media (max-width:768px){
+                .container{
+                    width:80%;
+
+                }
+                .heading{
+                    font-size: 1.2rem;
+
+                }
+                .btn{
+                    width:100%;
+                    margin-left: 0;
+                }
+            }
+        </style>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+        <h1 class="heading">EDIT YOUR PROFILE</h1>
+        <main>
+            
+        <div class="container mt-2">
+            <form action="/user/<%= user._id %>?_method=PATCH" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstName" name="firstName" value="<%= user.firstName %>" aria-describedby="firstName">
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="lastName" name="lastName" value="<%= user.lastName %>" aria-describedby="lastName">
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="gender" class="gender">Gender:</label>
+                    <select name="gender">
+                        <option value="male" <%= user.gender ==='male' ? 'selected': '' %>>Male</option>
+                        <option value="female" <%= user.gender ==='female' ? 'selected': '' %>>Female</option>
+                        <option value="other" <%= user.gender ==='other' ? 'selected': '' %>>Other</option>
+                    </select>                
+                    
+                <div class="mb-3">
+                    <label for="profileImage" class="form-label">Profile Image</label>
+                    <input class="form-control" type="file" name="profileImage" id="profileImage">
+                    <img src="<%= user.profileImageURL %>" width="100" alt="Current profile image">
+
+                </div>
+               
+                <div class="mb-3">
+                    <label for="Password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="Password" name="password" placeholder="Enter new password">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="Confirm-Password" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="Confirm-Password" name="confirm-password" placeholder="Re-enter new password">
+                </div>
+                
+                <button type="submit" class="btn">Update</button>
+            </form>
+
+        </div>
+        </main>
+
+
+    <%- include('./partials/script') %>
+
+</body>
+<%- include('./partials/footer') %>
+
+
+
+</html>

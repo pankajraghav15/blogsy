@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>userHome</title>
+        <link rel="stylesheet" href="/css/userHome.css">
+</head>
+
+<body>
+    <header>
+
+        <%- include('./partials/nav') %>
+
+    </header>
+    <main>
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <% if (locals.user) { %>
+            <section class="firstSection">
+
+                <div class="leftSection">
+                    <h1>Hi,<Span class="pink">
+                            <%= user.firstName %> !</h1></Span>
+
+                    <div class="welcome">
+                        <p id="wb1">Welcome back to Blogsy</p>
+                        <p id="wb2">Your words have the power to <span id="element"></span></p>
+                        <hr>
+                        <p id="wb2">We're thrilled to see you again. Let’s get writing.</p>
+
+                    </div>
+                </div>
+                <div class="rightSection">
+                    <img src="<%= user.profileImageURL %>" alt="profile image">
+                    <div class="profile">
+                        <div class="viewProfile">
+                            <a href="/user/<%= user._id %>" class="btn">View profile</a>
+                        </div>
+                        <div class="editProfile">
+                            <a href="/user/<%= user._id %>/edit" class="btn">Edit profile</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </section>
+
+            <% } %>
+    </main>
+
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['inspire........', ' inform........', 'ignite........'],
+
+            typeSpeed: 50,
+        });
+    </script>
+
+
+
+    <%- include('./partials/script') %>
+
+</body>
+<%- include('./partials/footer') %>
+
+</html>

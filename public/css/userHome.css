@@ -1,0 +1,102 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+.firstSection{
+    display: flex;
+    justify-content: space-around;
+    margin: 23px 0;
+}
+
+.firstSection div{
+    width: 30%;
+}
+
+.leftSection{
+    
+    margin: 40px 0;
+    
+    
+}
+.rightSection{
+    height: 30rem;
+    width: 1rem;
+}
+
+
+.leftSection div{
+    font-family: "Roboto", sans-serif;
+    font-style: italic;
+    width: 100%;
+}
+
+#wb1{
+    margin-top: 20px;
+    
+    font-size: 33px;
+    font-weight: bolder;
+}
+
+#wb2{
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: 60px;
+}
+
+
+
+.leftSection h1{
+    color:rgb(64, 66, 65)
+    
+}
+
+
+
+#element{
+    color:rgb(239, 76, 103);
+    font-family: "Roboto", sans-serif;
+    font-style: italic;
+    font-size: 20px;
+}
+
+
+
+.rightSection img{
+    width:50%;
+    height: 50%;
+    margin-top: 20px;
+    margin-left: 6rem;
+    
+    
+}
+
+.pink{
+    color: rgb(227, 80, 105);
+}
+
+.profile{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    gap: 7rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 111px;
+    margin-top: 20px;
+        
+}
+
+ .btn{
+                background-color: rgb(241, 82, 108);
+                color: whitesmoke;
+                font-weight: bold;
+                
+            }
+            .btn:hover{
+                background-color:rgb(209, 43, 70) ;
+                color: whitesmoke;
+            }

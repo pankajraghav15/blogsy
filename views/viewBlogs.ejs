@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>viewBlogs</title>
+        <style>
+            .btn{
+                background-color: rgb(241, 82, 108);
+                color: whitesmoke;
+                font-weight: bold;
+            }
+            .btn:hover{
+                background-color:rgb(209, 43, 70) ;
+                color: whitesmoke;
+            }
+            .card {
+                margin: auto;
+                width: 100%; 
+                max-width: 18rem; 
+            }
+
+            @media (max-width: 992px) {
+                .container.row {
+                row-gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container.row {
+                row-gap: 1.2rem;
+            }
+            .card {
+                max-width: 100%; 
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container.row {
+                row-gap: 1rem;
+            }
+            .card {
+                max-width: 100%; 
+            }
+            .btn {
+                width: 100%; 
+                text-align: center;
+            }
+        }
+            
+        </style>
+</head>
+
+<body>
+    <%- include('./partials/nav') %>
+
+        <div class="container mt-3 row row-cols-3">
+            <% blogs.forEach(blog=> { %>
+                <div class="col mt-4">
+                    <div class="card col" style="width: 18rem;">
+                        <img src="<%= blog.coverImageURL %>" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= blog.title %></h5>
+                            <a href="/blog/<%= blog.id %>" class="btn">View more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <% }) %>
+        </div>
+
+        <%- include('./partials/script') %>
+
+
+</body>
+<%- include('./partials/footer') %>
+</html>

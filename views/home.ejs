@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head') %>
+        <title>Homepage</title>
+        <link rel="stylesheet" href="css/home.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+            rel="stylesheet">
+</head>
+
+<body>
+    <header>
+
+        <%- include('./partials/nav') %>
+
+    </header>
+    <main>
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+        <section class="firstSection">
+            <div class="leftSection">
+                <h1>WELCOME TO BLOGSY</h1>
+                <span id="element"></span>
+                <hr>
+                <p>Whether you're here to share your thoughts, document your journey, or spark conversations that
+                    matter—Blogsy is your canvas. We believe everyone has something worth saying, and this is where your
+                    words come to life.</p>
+            </div>
+            <div class="rightSection">
+                <img src="/images/Blog.jpg" alt="Blog">
+            </div>
+        </section>
+    </main>
+
+
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Your voice........', ' Your space........', ' Your story........'],
+            typeSpeed: 50,
+        });
+    </script>
+
+
+    <%- include('./partials/script') %>
+</body>
+
+<%- include('./partials/footer') %>
+</html>
