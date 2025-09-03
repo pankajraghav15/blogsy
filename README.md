@@ -113,4 +113,4 @@ GitHub: @yourusername
 
 
 ## 🌐 Live Demo
-🔗 https://blogsy-demo.vercel.app
+🔗 [https://blogsy-x4gc.onrender.com/]
