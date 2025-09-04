@@ -45,16 +45,22 @@ const handleCreateComment = async (req, res)=>{
 
 
 const handleCreateBlog =  async (req,res)=>{
-  console.log("req.user in POST /:", req.user)
-  const { title, body } = req.body;
+  try {
+    const { title, body } = req.body;
   const blog = await Blog.create({
     body,
     title,
     createdBy: req.user._id,
-    coverImageURL:`/uploads/${req.file.filename}`,
+    coverImageURL:req.file.path,
   });
+  return res.redirect(`/blog/${blog._id}`);
+  } catch (error) {
+    
+    res.status(500).send("Error creating blog");
 
-   return res.redirect(`/blog/${blog._id}`);
+  } 
+
+   
 };
 
 module.exports = {

@@ -81,7 +81,7 @@
                 <div class="mb-3">
                     <label for="profileImage" class="form-label">Profile Image</label>
                     <input class="form-control" type="file" name="profileImage" id="profileImage">
-                    <img src="<%= user.profileImageURL %>" width="100" alt="Current profile image">
+                    <img src="<%= user.profileImageURL || 'https://res.cloudinary.com/ddiezbhy0/image/upload/v1234567890/default-profile.png' %>" width="100" class="rounded-circle mt-2" alt="Current profile image">
 
                 </div>
                

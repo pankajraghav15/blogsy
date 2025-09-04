@@ -33,7 +33,7 @@ const handleUserLogout = (req, res) => {
 const handleCreateUser = async (req, res) => {
     try {
         const { firstName, lastName, gender, email, password } = req.body;
-        const profileImageURL = req.file?`/uploads/${req.file.filename}`:"/images/default.png";
+        const profileImageURL = req.file? req.file.path : "https://res.cloudinary.com/ddiezbhy0/image/upload/v1757008035/default_l1wx3x.png";
         await User.create({
             firstName,
             lastName,
@@ -90,7 +90,7 @@ const handleUpdateUserById = async (req, res) => {
         }
 
         if (req.file) {
-            updateData.profileImageURL = `/uploads/${req.file.filename}`;
+            updateData.profileImageURL = req.file.path;
         }
 
         if (req.body.password && req.body.confirmPassword){
@@ -117,6 +117,20 @@ const handleUpdateUserById = async (req, res) => {
 };
 
 
+const handleUserProfileUpload = async(req,res)=> {
+    try {
+        const userId = req.user._id;
+        await User.findByIdAndUpdate(userId, {
+            profileImageURL: req.file.path
+        });
+        res.redirect("/profile")
+    } catch (error) {
+        
+        res.status(500).send("Error uploading profile image");
+
+    }
+};
+
 
 
 
@@ -129,5 +143,6 @@ module.exports = {
     handleViewUserProfile,
     handleEditUserForm,
     handleUpdateUserById,
+    handleUserProfileUpload,
    
 };

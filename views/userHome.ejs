@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="rightSection">
-                    <img src="<%= user.profileImageURL %>" alt="profile image">
+                    <img src="<%= user.profileImageURL || 'https://res.cloudinary.com/ddiezbhy0/image/upload/v1234567890/default-profile.png' %>" class="rounded-circle" alt="profile image">
                     <div class="profile">
                         <div class="viewProfile">
                             <a href="/user/<%= user._id %>" class="btn">View profile</a>

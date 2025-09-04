@@ -17,6 +17,8 @@
                 width:200px;
                 height: 200px;
                 margin-top: 20px;
+                border-radius: 50%;
+                object-fit: cover;
             }
 
             .userDetails{
@@ -32,7 +34,7 @@
             <% if (user) { %>
                 <div class="profile">
                     <div class="profileImage">
-                        <img src="<%= user.profileImageURL %>" alt="profile image">
+                        <img src="<%= user.profileImageURL.replace('/upload/', '/upload/w_200,h_200,c_fill,g_face/') || 'https://res.cloudinary.com/ddiezbhy0/image/upload/v1234567890/default.png' %>" alt="profile image">
                     </div>
                     <div class="userDetails">
                        <h5>First Name: <%= user.firstName %></h5>
